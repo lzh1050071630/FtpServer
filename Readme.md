@@ -116,5 +116,6 @@ https://blog.csdn.net/songchuwang1868/article/details/89877739
   + epoll是在select出现N多年后才被发明的，是selcet和poll的增强版本。epoll通过以下一些措施来改进效率。
   + 措施一：功能分离
     + select低效的原因之一是将“维护等待队列”和“阻塞进程”两个步骤合二为一。每次调用select都需要添加等待队列和阻塞进程两个步骤，然而大多数应用场景中，需要监视的socket相对固定，并不需要每次都修改。epoll将这两个操作分开，先用epoll_ctl维护等待队列，在调用epoll_wait阻塞进程(解耦)。显而易见的，效率就能得到提升。
-    + 
+  
++ 
 
